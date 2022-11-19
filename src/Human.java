@@ -4,10 +4,29 @@ public class Human {
     int yearOfBirth;
     String jobTitle;
     Human(String name,String town,int yearOfBirth,String jobTitle) {
-        this.name = name;
-        this.town = town;
-        this.yearOfBirth = yearOfBirth;
-        this.jobTitle = jobTitle;
+
+
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+        if (name == null){
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
+        }
+        if (town ==null) {
+            this.town = "Информация не указана";
+        }else {
+            this.town = town;
+        }
+        if (jobTitle ==null) {
+            this.jobTitle = "Информация не указана";
+        } else {
+            this.jobTitle = jobTitle;
+        }
+
     }
 
     @Override
