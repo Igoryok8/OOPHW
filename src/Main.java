@@ -3,7 +3,7 @@ public class Main {
         System.out.println("Задание 1");
         System.out.println();
 
-        Human maxim = new Human("Максим", null,1988,"Бренд-менеджер");
+        Human maxim = new Human("  ", null,1988,"Бренд-менеджер");
         Human anya = new Human("Аня","Москва",-1993,"Методист образовательных программ");
         Human katya = new Human("Катя","Калининград",1992,null);
         Human artyom = new Human(null,"Москва",1995,"Директор по развитию бизнеса");
@@ -23,10 +23,10 @@ public class Main {
         Car audi = new Car("Audi","A8 50 L TDI quattro",-3.0,"чёрный",2020,"в Германии");
         System.out.println(audi);
 
-        Car bmw = new Car("BMW",null,3.0,"чёрный",2021,"в Германии");
+        Car bmw = new Car("BMW"," ",3.0,"чёрный",2021,"в Германии");
         System.out.println(bmw);
 
-        Car kia = new Car("Kia","Sportage 4-го поколения",2.4,"красный",-2018,null);
+        Car kia = new Car("Kia","Sportage 4-го поколения",2.4," ",-2018,null);
         System.out.println(kia);
 
         Car hyundai = new Car("Hyundai","Avante",1.6,null,2016,"в Южной Корее");
