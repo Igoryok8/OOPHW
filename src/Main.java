@@ -38,7 +38,7 @@ public class Main {
         System.out.println("Задание 3");
         System.out.println();
 
-        Flower rose = new Flower("Роза обыкновенная", "Голландия", 35.59,0 );
+        Flower rose = new Flower("Роза обыкновенная", "Голландия", 35.59);
         Flower chrysanthemum = new Flower("Хризантема", " ", 15, 5);
         Flower pion = new Flower("Пион", "Англия", 69.9, 1);
         Flower gypsophila = new Flower("Гипсофила", "Турция", 19.5, 10);
@@ -48,5 +48,29 @@ public class Main {
         System.out.println(pion);
         System.out.println(gypsophila);
         System.out.println();
+        System.out.println("Дополнительное задание");
+        System.out.println();
+        printCostOfBouquet(
+                rose,rose,rose,
+                chrysanthemum,chrysanthemum,chrysanthemum,chrysanthemum,chrysanthemum,
+                gypsophila
+        );
+
+    }
+
+    private static void printCostOfBouquet(Flower... flowers) {
+        double totalCost = 0;
+        int lifeSpanMin=Integer.MAX_VALUE;
+        for (Flower flower : flowers) {
+            if (flower.lifeSpan < lifeSpanMin) {
+                lifeSpanMin = flower.lifeSpan;
+            }
+            totalCost+= flower.getCost();
+            System.out.println(flower);
+        }
+        totalCost = totalCost * 1.1;
+        System.out.println("Стоимость букета: " + totalCost);
+        System.out.println("Срок стояния букета: " + lifeSpanMin);
+
     }
 }

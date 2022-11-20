@@ -28,6 +28,9 @@ public class Flower {
             this.lifeSpan = lifeSpan;
         }
     }
+    public Flower(String flowerColor, String country, double cost) {
+        this(flowerColor,country,cost,3);
+        }
 
     @Override
     public String toString() {
