@@ -1,8 +1,9 @@
 public class Human {
-    String name;
+   private String name;
     private String town;
     private int yearOfBirth;
-    String jobTitle;
+    private String jobTitle;
+
 
     Human(String name, String town, int yearOfBirth, String jobTitle) {
         if (town == null || town.isEmpty() || town.isBlank()) {

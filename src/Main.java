@@ -1,3 +1,5 @@
+import transport.Car;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1");
@@ -20,12 +22,16 @@ public class Main {
         System.out.println();
 
         Car lada = new Car(null, "Granta", 1.7, "жёлтый", 2015, "в России");
+        lada.setTransmission("АКПП");
         System.out.println(lada);
 
         Car audi = new Car("Audi", "A8 50 L TDI quattro", -3.0, "чёрный", 2020, "в Германии");
+        audi.setSummerTires(false);
         System.out.println(audi);
 
         Car bmw = new Car("BMW", " ", 3.0, "чёрный", 2021, "в Германии");
+        bmw.setRegistrationNumber("а888мр199");
+        System.out.println(bmw.isCorrectRegistrationNumber());
         System.out.println(bmw);
 
         Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, " ", -2018, null);
