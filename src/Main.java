@@ -1,4 +1,6 @@
+import transport.Bus;
 import transport.Car;
+import transport.Train;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,6 +42,21 @@ public class Main {
         Car hyundai = new Car("Hyundai", "Avante", 1.6, null, 2016, "в Южной Корее");
         System.out.println(hyundai);
         System.out.println();
+
+        Train lastochka = new Train("Ласточка", "B-901",2011,"Россия","",301);
+        Train leningrad = new Train("Ленинград", "D-125",2019,"Россия","",270);
+        System.out.println(lastochka);
+        System.out.println(leningrad);
+        System.out.println();
+
+        Bus neoplan = new Bus("Neoplan", "Tourliner", 2016, "Германия", "синий", 200);
+        Bus man = new Bus("MAN", "Lion's Coach", 2021, "Германия", "чёрный", 220);
+        Bus liaz = new Bus("ЛиАЗ", "5292", 2022, "Россия", "белый", 160);
+        System.out.println(neoplan);
+        System.out.println(man);
+        System.out.println(liaz);
+
+
 
         System.out.println("Задание 3");
         System.out.println();

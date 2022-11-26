@@ -3,8 +3,8 @@ package transport;
 public class Transport {
     private String brand;
     private String model;
-    private final int productionYear;
-    private final String productionCountry;
+    private int productionYear;
+    private String productionCountry;
     private String color;
     private int maxSpeed;
 
@@ -45,6 +45,10 @@ public class Transport {
 
     public Transport(String brand, String model, int productionYear, String productionCountry, String color) {
         this(brand, model, productionYear, productionCountry, color,200);
+
+    }
+
+    public Transport() {
     }
 
     public int getProductionYear() {
