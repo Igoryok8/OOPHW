@@ -3,13 +3,10 @@ package transport;
 import java.security.Key;
 import java.time.LocalDate;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
+
     private double engineVolume;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
+
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
@@ -21,36 +18,14 @@ public class Car {
     public Car(String brand, String model, double engineVolume, String color, int productionYear,
                String productionCountry, String transmission, String bodyType, String registrationNumber,
                int numberOfSeats, boolean summerTires, Key key, Insurance insurance) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-        if (productionCountry == null || productionCountry.isEmpty() || productionCountry.isBlank()) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
+        super(brand,model,productionYear,productionCountry,color);
+
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
         }
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
+
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "МКПП";
         } else {
@@ -84,22 +59,6 @@ public class Car {
         this(brand, model, engineVolume, color, productionYear, productionCountry, "МКПП", "Седан", "х000хх000", 5, true, new Key(),new Insurance());
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
     public String getBodyType() {
         return bodyType;
     }
@@ -121,19 +80,7 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
-    public String getTransmission() {
+       public String getTransmission() {
         return transmission;
     }
 
