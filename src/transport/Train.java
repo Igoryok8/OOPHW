@@ -10,13 +10,8 @@ public class Train extends Transport {
 
 
     public Train(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed,
-    double ticketPrice, int departureTime, String startStation, String finishStation, int sumWagons) {
-        super(brand, model, productionYear, productionCountry, color, maxSpeed);
-    }
-
-    public Train(String brand, String model, int productionYear, String productionCountry, String color,
                  double ticketPrice, int departureTime, String startStation, String finishStation, int sumWagons) {
-        super(brand, model, productionYear, productionCountry, color);
+        super(brand, model, productionYear, productionCountry, color, maxSpeed);
 
         if (ticketPrice <= 0) {
             this.ticketPrice = 2000;
