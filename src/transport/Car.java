@@ -18,7 +18,7 @@ public class Car extends Transport {
     public Car(String brand, String model, double engineVolume, String color, int productionYear,
                String productionCountry, String transmission, String bodyType, String registrationNumber,
                int numberOfSeats, boolean summerTires, Key key, Insurance insurance) {
-        super(brand,model,productionYear,productionCountry,color);
+        super(brand,model,productionYear,productionCountry,color,200);
 
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
