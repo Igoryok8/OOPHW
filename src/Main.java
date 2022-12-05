@@ -43,8 +43,8 @@ public class Main {
         System.out.println(hyundai);
         System.out.println();
 
-        Train lastochka = new Train("Ласточка", "B-901",2011,"Россия","",301);
-        Train leningrad = new Train("Ленинград", "D-125",2019,"Россия","",270);
+        Train lastochka = new Train("Ласточка", "B-901",2011,"Россия","",301,3500,20,"Белорусскоий вокзал","Минск-Пассажирский",11);
+        Train leningrad = new Train("Ленинград", "D-125",2019,"Россия","",270,1700,22,"Ленинградский вокзал","Ленинград-Пассажирский", 8);
         System.out.println(lastochka);
         System.out.println(leningrad);
         System.out.println();
