@@ -1,14 +1,15 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     private String brand;
     private String model;
     private int productionYear;
     private String productionCountry;
     private String color;
     private int maxSpeed;
+    private String typeFuel;
 
-    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
+    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed, String typeFuel) {
 
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "default";
@@ -40,13 +41,18 @@ public class Transport {
         } else {
             this.maxSpeed = maxSpeed;
         }
-
+        if (typeFuel == null || typeFuel.isEmpty() || typeFuel.isBlank()) {
+            this.typeFuel = "дизель";
+        } else {
+            this.typeFuel = typeFuel;
+        }
     }
 
     public Transport(String brand, String model, int productionYear, String productionCountry, String color) {
-        this(brand, model, productionYear, productionCountry, color,200);
-
+        this(brand, model, productionYear, productionCountry, color,200,"");
     }
+
+    public abstract void refill();
 
     public Transport() {
     }
@@ -91,9 +97,22 @@ public class Transport {
         this.maxSpeed = maxSpeed;
     }
 
+    public String getTypeFuel() {
+        return typeFuel;
+    }
+
+    public void setTypeFuel(String typeFuel) {
+        if (typeFuel == null || typeFuel.isEmpty() || typeFuel.isBlank()) {
+            this.typeFuel = "дизель";
+        } else {
+            this.typeFuel = typeFuel;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Бренд: "+getBrand() + "; модель: " + getModel() + "; год выпуска: " + getProductionYear() + "; страна производитель: "
-                + getProductionCountry() + "; максимальная скорость: " + getMaxSpeed() + " км/ч.";
+        return "Бренд: " + getBrand() + "; модель: " + getModel() + "; год выпуска: " + getProductionYear() + "; страна производитель: "
+                + getProductionCountry() + "; максимальная скорость: " + getMaxSpeed() + " км/ч; тип топлива: " +getTypeFuel();
     }
+
 }

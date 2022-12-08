@@ -18,7 +18,7 @@ public class Car extends Transport {
     public Car(String brand, String model, double engineVolume, String color, int productionYear,
                String productionCountry, String transmission, String bodyType, String registrationNumber,
                int numberOfSeats, boolean summerTires, Key key, Insurance insurance) {
-        super(brand,model,productionYear,productionCountry,color,200);
+        super(brand,model,productionYear,productionCountry,color,200,"");
 
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
@@ -51,12 +51,14 @@ public class Car extends Transport {
         } else {
             this.insurance = insurance;
         }
+
         this.numberOfSeats = numberOfSeats;
         this.summerTires = summerTires;
     }
 
     public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry) {
-        this(brand, model, engineVolume, color, productionYear, productionCountry, "МКПП", "Седан", "х000хх000", 5, true, new Key(),new Insurance());
+        this(brand, model, engineVolume, color, productionYear, productionCountry, "МКПП", "Седан",
+                "х000хх000", 5, true, new Key(),new Insurance());
     }
 
     public String getBodyType() {
@@ -105,6 +107,7 @@ public class Car extends Transport {
         }
     }
 
+
     public boolean isSummerTires() {
         return summerTires;
     }
@@ -146,6 +149,11 @@ public class Car extends Transport {
     }
 
     @Override
+    public void refill() {
+
+    }
+
+    @Override
     public String toString() {
         return getBrand() + " " + getModel() + ", " + getProductionYear() + " год выпуска, сборка "
                 + getProductionCountry() + ", " + getColor() + " цвет кузова, объем двигателя — " + getEngineVolume() +
@@ -153,7 +161,7 @@ public class Car extends Transport {
                 + getRegistrationNumber() + ", количество мест: " + getNumberOfSeats() + ", " + (isSummerTires() ? "летняя" : "зимняя") + " резина, "
                 +(getKey().isKeylessAccess() ? "Безключевой доступ" : "Доступ с ключом")+", "
                 +(getKey().isRemoteEngineStart() ? "Удалённый запуск" : "Обычный запуск")+", номер страховки: " +getInsurance().getNumber()+
-                ", стоимость страховки: "+getInsurance().getCost()+", срок действия страховки: " +getInsurance().getValidityPeriod();
+                ", стоимость страховки: "+getInsurance().getCost()+", срок действия страховки: " +getInsurance().getValidityPeriod()+ ", тип топлива: " +getTypeFuel();
     }
 
     public static class Key {
